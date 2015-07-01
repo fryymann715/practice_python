@@ -4,21 +4,18 @@ import webbrowser
 import time
 
 
-def to_seconds(hours):
-    hours = int(hours) * 60 * 60
-    return hours
-
-
-def take_break(minutes):
+def take_break(minutes, num_breaks):
     seconds = int(minutes) * 60
-    counter = 0
-    while counter < 2:
+    break_counter = 0
+    print("*************** Started ******************")
+    print("******** " + time.ctime() + " ********")
+    while break_counter < num_breaks:
         time.sleep(seconds)
         print("testing!")
         webbrowser.open("https://mail.google.com/mail/u/0/?tab=wm#inbox/14e38528a5dbdd12")
-        counter += 1
+        break_counter += 1
+    print("************** Finished **************")
 
 
 
-
-take_break(1)
+take_break(1, 3)

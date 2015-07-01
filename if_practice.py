@@ -2,7 +2,7 @@ __author__ = 'Ian'
 
 
 def which_letter(arg):
-    if which_letter < 5:
+    if arg < 5:
         answer = 'A'
     else:
         answer = 'B'

@@ -26,7 +26,7 @@ assert daysBetweenDates(2013, 1, 1, 2013, 1, 1) == 0<br>
 If this assertion is not true, it stops the program and throws an error while compiling. This makes it easier to search for and destroy bugs within your code.
 '''
 
-
+# function that finds the number of concepts in the lesson string by counting the amount of TITLE tasgs it finds
 def get_num_of_concepts(text):
     number_concepts = 0
     while text.find('TITLE:') != -1:
@@ -35,26 +35,26 @@ def get_num_of_concepts(text):
         text = text[next_spot+6:]
     return number_concepts
 
-
+# pulls the lesson number from the lesson string and turns it into an integer
 def get_lesson_id(text, lesson_list):
     start_location = text.find('LESSON: ')
     end_location = text.find('NAME: ')
     lesson_id = text[start_location+8:end_location]
     lesson_list[0] = int(lesson_id)
 
-
+# takes the number that is passed to it and increments it by 1
 def gen_concept_id(id_number):
     id_number += 1
     return id_number
 
-
+# pulls the lesson name from the lesson string
 def get_lesson_name(text, lesson_list):
     start_location = text.find('NAME: ') + 6
     end_location = text.find('TITLE: ')
     lesson_name = text[start_location:end_location-1]
     lesson_list[1] = lesson_name
 
-
+# pulls an individual concept from a chunk of the lesson string
 def get_title(concept):
     start_location = concept.find('TITLE: ') + 7
     end_location = concept.find('DESC: ')

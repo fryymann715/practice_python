@@ -7,12 +7,12 @@ import os   #imports filesystem stuff
 
 
 def take_break(minutes, num_breaks):
-    seconds = int(minutes) * 60 #convert minutes to an integer
+    #seconds = int(minutes) * 60 #convert minutes to an integer
     break_counter = 0
     print("*************** Started ******************")
     print("******** " + time.ctime() + " ********")
     while break_counter < num_breaks:
-        time.sleep(seconds)
+        time.sleep(minutes*60)
         print("testing!")
         webbrowser.open("https://mail.google.com/mail/u/0/?tab=wm#inbox/14e38528a5dbdd12")
         break_counter += 1

@@ -29,11 +29,8 @@ def rename_files():
     print(os.getcwd())
 
     for file_name in file_list:
-        #remove numbers and rename file
+        #remove numbers, convert all letters to lower case and rename file
         os.rename(file_name, file_name.translate(None, "0123456789").lower())
-        # take new name and capitalize then rename again
-        #os.rename(file_name, file_name.capitalize())
-        #print("New name- "+file_name)
     os.chdir(saved_path)
     print(file_list)
 

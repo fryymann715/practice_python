@@ -1,18 +1,18 @@
 __author__ = 'Ian'
 
-#import libraries
+# import libraries
 import webbrowser
 import time
-import os   #imports filesystem stuff
+import os   # imports filesystem stuff
 
 
 def take_break(minutes, num_breaks):
-    #seconds = int(minutes) * 60 #convert minutes to an integer
+    # seconds = int(minutes) * 60 # convert minutes to an integer
     break_counter = 0
     print("*************** Started ******************")
     print("******** " + time.ctime() + " ********")
     while break_counter < num_breaks:
-        time.sleep(minutes*60)
+        time.sleep(minutes*60) # configured to convert the number of minutes given into seconds
         print("testing!")
         webbrowser.open("https://mail.google.com/mail/u/0/?tab=wm#inbox/14e38528a5dbdd12")
         break_counter += 1
@@ -29,7 +29,7 @@ def rename_files():
     print(os.getcwd())
 
     for file_name in file_list:
-        #remove numbers, convert all letters to lower case and rename file
+        # remove numbers, convert all letters to lower case and rename file
         os.rename(file_name, file_name.translate(None, "0123456789").lower())
     os.chdir(saved_path)
     print(file_list)

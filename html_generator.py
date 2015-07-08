@@ -61,14 +61,14 @@ def get_title(concept):
     concept_title = concept[start_location:end_location-1]
     return concept_title
 
-
+# grabs the description portion of the raw concept text
 def get_desc(concept):
     start_location = concept.find('DESC: ') + 6
     end_location = concept.find('TITLE: ', start_location)
     concept_desc = concept[start_location:end_location]
     return concept_desc
 
-
+# loops through all the concepts and fills a list containing all the concepts' info
 def fill_concepts(text, number_of_concepts):
     counter = 0
     concept_list = []

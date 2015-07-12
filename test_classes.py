@@ -4,6 +4,8 @@ __author__ = 'Ian'
 import webbrowser
 import time
 import os   # imports filesystem stuff
+import turtle
+
 
 
 def take_break(minutes, num_breaks):
@@ -34,4 +36,42 @@ def rename_files():
     os.chdir(saved_path)
     print(file_list)
 
-rename_files()
+def draw_square(the_turtle):
+    counter = 0
+    while counter < 4:
+        the_turtle.forward(100)
+        the_turtle.right(90)
+        counter += 1
+
+def draw_triangle(the_turtle):
+    the_turtle.forward(70)
+    the_turtle.right(135)
+    the_turtle.forward(100)
+    the_turtle.right(135)
+    the_turtle.forward(70)
+
+def loop_triangle(the_turtle):
+    for i in range(1, 37):
+        draw_triangle(the_turtle)
+        the_turtle.right(10)
+
+def loop_square(the_turtle):
+    # counter = 0
+    for i in range(1, 73):
+        the_turtle.right(5)
+        draw_square(the_turtle)
+        # counter += 1
+
+def start_drawing():
+    window = turtle.Screen()
+    window.bgcolor("black")
+    leo = turtle.Turtle()
+    leo.color('blue')
+    leo.speed(15)
+    loop_triangle(leo)
+    # loop_square(leo)
+    # draw_circle(window)
+    # draw_triangle(window)
+    window.exitonclick()
+
+start_drawing()

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c9063b9-cd96-461b-8b51-ec2dc3043a2c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profanity_filter.py" afterPath="$PROJECT_DIR$/profanity_filter.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="1c9063b9-cd96-461b-8b51-ec2dc3043a2c" name="Default" comment="" />
     <ignored path="practice_python.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

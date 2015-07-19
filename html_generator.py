@@ -1,7 +1,7 @@
 __author__ = 'Ian'
 import os
 
-lessonfile =  open("C:\Users\ideans\Documents\Nanodegree\Intro_to_Programming\Lesson 8 Notes.txt")
+lessonfile =  open("C:\python_playground\Intro_to_Programming\Lesson 9 Notes.txt")
 LESSON_TEXT = lessonfile.read()
 
 # function that finds the number of concepts in the lesson string by counting the amount of TITLE tasgs it finds

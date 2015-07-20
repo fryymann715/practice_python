@@ -52,7 +52,6 @@ def fill_concepts(text, number_of_concepts):
     concept_list = []
     while counter < number_of_concepts:
         concept_id = gen_concept_id(counter)
-        counter += 1
         concept = [0] * 3
         this_concept_start = text.find('TITLE:')
         this_concept_end = text.find('TITLE:', this_concept_start + 1)
@@ -62,6 +61,7 @@ def fill_concepts(text, number_of_concepts):
         concept[2] = get_desc(raw_concept)
         concept_list.append(concept)
         text = text[this_concept_end:]
+        counter += 1
     return concept_list
 
 

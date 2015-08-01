@@ -1,65 +1,27 @@
-__author__ = 'Ian'
+__author__ = "ideans"
+import noteclasses
+import os
+import lessonlib
 
-# Generates the HTML for my "lesson" section
+lessonfile = open("C:\Users\Ian\Documents\Intro to Programming\Lesson 8 Notes.txt")
+LESSON_TEXT = lessonfile.read()
+lessonfile.close()
 
-def gen_lesson(lesson_id, lesson_title):
-
-    html_text_1 = '''<div class="lesson">
-    <h1 id="'''
-
-    html_text_2 = '''">'''
-
-    html_text_3 = '''</h1>
-
-
-</div>'''
-
-    full_html_text = html_text_1+lesson_id + html_text_2 + lesson_title + html_text_3
-    return full_html_text
-
-# Generates the concept section complete with title, description, and body. Also adds the css id tag
-
-def gen_concept(concept_id, concept_title, concept_desc, concept_body):
-
-    html_text_1 = '''
-        <div class="concept">
-            <div class="concept-title" id="'''
-
-    html_text_2 = '''">'''
-
-    html_text_3 = '''</div>
-            <span class="concept-desc">'''
-
-    html_text_4 = '''</span>
-            <p>
-                '''
-
-    html_text_5 = '''
-            </p>
-         </div>
-     '''
-
-    full_html_text = html_text_1 + concept_id + html_text_2 + concept_title + html_text_3 + concept_desc + html_text_4 + concept_body + html_text_5
-
-    return full_html_text
+def process_lesson_text():
+    concept_list_string = lessonlib.fill_concepts(LESSON_TEXT, lessonlib.get_num_of_concepts(LESSON_TEXT))
+    lesson_list = [lessonlib.get_lesson_name(LESSON_TEXT), lessonlib.get_lesson_id(LESSON_TEXT),
+                   concept_list_string]
+    return lesson_list
 
 
-# Lesson ID is a string that is inserted into the CSS id tag
-# Lesson Title is obviously the title that is in the h1 tag
 
-lesson_id = '''lesson-7'''
-lesson_title = '''Control Flow & Loops'''
+#concept_list_string = [
+# ['Concept 1', 1, 'First concept.'], ['Concept 2', 2, 'Second concept.'], ['Concept 3', 3, 'Third concept']
+#]
+lesson_list = process_lesson_text()
 
-
-concept_id = '''7-3'''
-concept_title = '''Or Statements'''
-concept_desc = '''An or statement takes two test expressions and checks if one or the other is true.'''
-concept_body = '''If statements can also have multiple test expressions connect with an or statement. By using or, the interpreter will determine whether or not to run the code in an if, so long as one of the test expressions is True.<br>
-                age = 30<br>
-                if age < 20 or age == 30:
-                &nbsp&nbsp&nbsp&nbsp&ltcode><br>
-                <br>
-                The example above would send the interpreter through the if block as long as the variable 'age' is under 20 or if it is equal to 30. It will check if the first expression is true. Since 30 is not less than 20, it goes to the next expression after the or, since 30 is in fact equal to 30, it will send the interpreter through the block.'''
-
-print gen_concept(concept_id, concept_title, concept_desc, concept_body)
-print gen_lesson(lesson_id, lesson_title)
+lesson10 = noteclasses.Lesson(lesson_list[0], lesson_list[1], lesson_list[2])
+#print(lesson10.concept_list[0].id_number)
+#print(lesson10.concept_list[0].title)
+#print(lesson10.id_number)
+print(lesson10.get_html())

@@ -1,5 +1,7 @@
 __author__ = 'Ian'
 
+# Library full of functions used to pull bits of data from the lesson notes text files.
+
 
 # function that finds the number of concepts in the lesson string by counting the amount of TITLE tasgs it finds
 def get_num_of_concepts(text):

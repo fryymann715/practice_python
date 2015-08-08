@@ -65,7 +65,7 @@ class Lesson(Entry):
 
 
     def get_concept(self, concept_number):
-        return
+        return self.concept_list[concept_number]
 
 
 

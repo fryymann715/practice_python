@@ -6,7 +6,7 @@ import lessonlib
 
 # Assign the text from txt file to a string.
 
-lessonfile = open("C:\Users\Ian\Documents\Intro to Programming\Lesson_9_Notes.txt")
+lessonfile = open("C:\Users\Ian\Documents\Intro to Programming\Lesson_9_`Notes.txt")
 LESSON_TEXT = lessonfile.read()
 lessonfile.close()
 
